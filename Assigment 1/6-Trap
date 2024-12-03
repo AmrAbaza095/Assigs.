@@ -1,0 +1,19 @@
+#We can handle Interrupting signals like Ctrl+C in a shell script by using trap command that allow us to define
+#and clean up actions if necessary, that should execute when the script receive a specific SIGINT (Interrupt from #keyboard which has a value of 2 in the manual) when Ctrl+C is pressed
+#!/ban/bash
+file=/tmp/junk
+cleanup() {
+echo "Ctrl+C detected Cleaning up..."
+rm -f "$file"
+echo "File deleted, Exiting..."
+exit
+}
+trap cleanup SIGINT
+counter=0
+echo "Press Ctrl+C to stop the counter"
+while true; do
+echo $counter > "$file"
+echo "counter= $counter"
+((counter++))
+sleep 1
+done

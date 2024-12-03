@@ -1,0 +1,23 @@
+Using expr command
+	sum=$(expr $a + $b)
+	sum=$(expr $a - $b)
+	sum=$(expr $a \* $b)
+	sum=$(expr $a / $b)
+	sum=$(expr $a % $b)
+	.....etc
+
+using double parenthes
+	sum=$(( a + b ))
+	sum=$(( a - b ))
+	sum=$(( a * b ))
+	sum=$(( a / b ))
+	sum=$(( a % b ))
+	.....etc
+
+using floating point
+	sum=$(echo "$a + $b" | bc)
+	sum=$(echo "$a - $b" | bc)
+	sum=$(echo "$a * $b" | bc)
+	sum=$(echo "$a / $b" | bc)
+	sum=$(echo "$a % $b" | bc)
+	.....etc

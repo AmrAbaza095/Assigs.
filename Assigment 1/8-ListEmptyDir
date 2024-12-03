@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+echo "usage: $0 *Replace with your Directory Destination*"
+exit 1
+fi
+
+dir=$1
+if [ ! -d "$dir" ]; then
+echo "Error: $dir is not a valid directory"
+exit 1
+fi
+
+EmptyFiles=$(find "$dir" -type f -empty)
+if [ -z "$EmptyFiles" ]; then
+echo "No empty files found"
+else
+echo "Empty files found in: $dir"
+echo "$EmptyFiles"
+fi

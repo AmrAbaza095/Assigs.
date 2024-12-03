@@ -1,0 +1,19 @@
+#! /bin/bash
+if [ $# -ne 1 ]; then
+echo "usage $0 "*Replace with your file destination*""
+exit 1
+fi
+
+InputFile="$1"
+if [ ! -f "$InputFile" ]; then
+echo "Error file is not found"
+exit 1
+fi
+
+BackupFile="${InputFile}.backup"
+cp "$InputFile" "$BackupFile"
+echo "Backup created: $BackupFile"
+
+sort -u "$InputFile" -o "$InputFile"
+echo "Duplicated lines has removed from "$InputFile""
+

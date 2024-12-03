@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p "Enter the file name: " F
+read -p "Enter the wanted word: " W
+if [[ ! -f "$F" ]]; then
+echo "File not found"
+exit 1
+fi
+count=$(grep -iwo "$W" "$F" | wc -l)
+echo "The word "$W" is located in The File "$F" "$count" Times"

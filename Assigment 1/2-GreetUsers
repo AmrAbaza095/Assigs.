@@ -1,0 +1,10 @@
+#!/bin/bash
+while :; do
+read -p "Enter Your Name" N
+if [[ -n "$N" && "$N" =~ ^[A-Za-z]+$ ]]; then
+break
+else
+echo "Enter a valid name "
+fi
+done
+echo "Hello "$N"!"

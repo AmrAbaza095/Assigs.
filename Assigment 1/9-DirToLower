@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then
+echo "usage: $0 *Replace this the the directory*"
+exit 1
+fi
+dir="$1"
+if [ ! -d "$dir" ]; then
+echo "Error: "$dir" is not a valid Directory"
+exit 1
+fi
+for file in "$dir"/*; do
+if [ -f "$file" ]; then
+LowerCase=$(echo "$file" | tr [:upper:] [:lower:])
+if [ "$file" != "$LowerCase" ]; then
+mv "$file" "$LowerCase"
+echo ""$file" is now renamed to "$LowerCase""
+fi
+fi
+done
+echo "All Upper case Letters now are changed into lower case one's"

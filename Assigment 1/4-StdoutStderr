@@ -1,0 +1,9 @@
+Standered Outpt (stdout)
+	A data stream used by any program to output the expected results to the termenal
+	Associated with a FIle descriptor (1)
+	ex:Hello World! => output of the command line(echo "Hello World!")
+
+Standered Error (stderr)
+	A data stream used used by any program to mention an occered error or non-colpleted command 
+	Associated with a File descriptor (2)
+	ex:cat: non-excist: No such file or directory => output of the command line(cat non-excist)

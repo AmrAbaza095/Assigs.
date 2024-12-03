@@ -1,0 +1,17 @@
+#!/bin/bash
+fact() {
+local num=$1
+local result=1
+for (( i=2 ; i<=num ; i++ )); do
+result=$(( result * i ))
+done
+echo $result
+}
+read -p "Enter an integer you want to get it's factorial: " number
+if ! [[ $number =~ ^[0-9]+$ ]]; then
+echo "Enter a valid Integer"
+exit 1
+fi
+result=$(fact $number)
+echo "The factorial for Number "$number" is: "$result""
+

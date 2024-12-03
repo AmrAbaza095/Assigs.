@@ -1,0 +1,14 @@
+#!/bin/bash
+while :; do
+read -p "Enter a positive integer" N
+if [[ "$N" =~ ^[0-9]+$ && "$N" -gt 0 ]]; then
+break
+else
+echo "please enter a valid positive integer"
+fi
+done
+sum=0
+for ((i=1 ; i<=N ; i++)); do
+sum=$((sum+i))
+done
+echo "The summation of the integers from 1 to "$N" equals to: "$sum""
